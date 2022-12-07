@@ -40,4 +40,4 @@ for (var i = 0; i < businessHours.length; i++) {
  console.log(businessHours[i])}
 if (businessHours[i] = currentTime) {
   console.log(presentStatus);
-}
+} 
