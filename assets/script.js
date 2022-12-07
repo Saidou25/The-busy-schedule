@@ -23,12 +23,21 @@ $(function () {
 });
 
 var currentDay = document.getElementById("currentDay");
-
-
-
+var currentTime = dayjs().format("HH");
+var businessHours = [0,1,2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
+   15, 16, 17, 18, 19, 20, 21, 22, 23,]
+var presentStatus = "present";
 
 console.log(dayjs().format("dddd D MMMM"));
 //the current day is displayed at the top of the calendar
 currentDay.textContent = dayjs().format("dddd D MMMM");
 
 //timeblocks for standard business hours
+//the past, present, or future
+console.log(dayjs().format("HH"));
+
+for (var i = 0; i < businessHours.length; i++) {
+ console.log(businessHours[i])}
+if (businessHours[i] = currentTime) {
+  console.log(presentStatus);
+}
