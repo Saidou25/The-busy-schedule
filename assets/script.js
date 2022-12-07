@@ -21,6 +21,14 @@ $(function () {
   //
   // TODO: Add code to display the current date in the header of the page.
 });
-console.log(dayjs().format('HH'));
+
 var currentDay = document.getElementById("currentDay");
-currentDay.textContent = dayjs().format('DD/MM');
+
+
+
+
+console.log(dayjs().format("dddd D MMMM"));
+//the current day is displayed at the top of the calendar
+currentDay.textContent = dayjs().format("dddd D MMMM");
+
+//timeblocks for standard business hours
