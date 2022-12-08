@@ -22,22 +22,40 @@ $(function () {
   // TODO: Add code to display the current date in the header of the page.
 });
 
-var currentDay = document.getElementById("currentDay");
-var currentTime = dayjs().format("HH");
-var businessHours = [0,1,2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
-   15, 16, 17, 18, 19, 20, 21, 22, 23,]
-var presentStatus = "present";
+var currentDay = dayjs().format("dddd D MMMM");
+ document.getElementById("currentDay").textContent = currentDay;
+ 
+ var currentTime = dayjs().format("HH");
 
-console.log(dayjs().format("dddd D MMMM"));
-//the current day is displayed at the top of the calendar
-currentDay.textContent = dayjs().format("dddd D MMMM");
+ var timeBlocks = document.querySelectorAll(".time-block");
+ 
+ 
+ for (var i = 0; i < timeBlocks.length; i++) {
+   var timeblocksTime = (timeBlocks[i].querySelector(".hour").textContent);
+ 
+ 
+  if (parseInt(timeblocksTime) === parseInt(currentTime)) {
+ 
+   timeBlocks[i].classList.remove("past");
+   timeBlocks[i].classList.remove("future");
+   timeBlocks[i].classList.add("present");
+ 
+ }  
+ 
+  if (parseInt(timeblocksTime) < parseInt(currentTime)) {
+ 
+   timeBlocks[i].classList.add("past");
+   timeBlocks[i].classList.remove("future");
+   timeBlocks[i].classList.remove("present");
+ }
+   if (parseInt(timeblocksTime) > parseInt(currentTime)) {
+ 
+     timeBlocks[i].classList.remove("past");
+     timeBlocks[i].classList.add("future");
+     timeBlocks[i].classList.remove("present");
+   
+   }
+ }
 
-//timeblocks for standard business hours
-//the past, present, or future
-console.log(dayjs().format("HH"));
 
-for (var i = 0; i < businessHours.length; i++) {
- console.log(businessHours[i])}
-if (businessHours[i] = currentTime) {
-  console.log(presentStatus);
-} 
+
