@@ -25,7 +25,8 @@ $(function () {
 var currentDay = dayjs().format("dddd D MMMM");
  document.getElementById("currentDay").textContent = currentDay;
  
- var currentTime = dayjs().format("HH");
+ var currentTime = parseInt(dayjs().format("HH"));
+ console.log(currentTime)
 
  var timeBlocks = document.querySelectorAll(".time-block");
  
@@ -57,5 +58,14 @@ var currentDay = dayjs().format("dddd D MMMM");
    }
  }
 
+ var buttonList = document.querySelectorAll(".btn")
+ 
+ for (var i = 0; i < buttonList.length; i++) {
+  buttonList[i].addEventListener("click", function() {
+  console.log("hello")
+    })
+ }
 
 
+ 
+ 
