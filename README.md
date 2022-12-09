@@ -1,6 +1,6 @@
 # The-busy-schedule
 ---
-### [The busy shedule](https://github.com/Saidou25/The-busy-schedule.git)
+### [The busy shedule](https://saidou25.github.io/The-busy-schedule/)
 
 ![Scheduler preview](./assets/images/127.0.0.1_5500_index.html.png)
 
